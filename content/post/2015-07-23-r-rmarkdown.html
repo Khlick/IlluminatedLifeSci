@@ -1,0 +1,117 @@
+---
+title: "Custom RMarkdown"
+date: "2019-05-14"
+categories: ["TEST"]
+tags: ["R Markdown","plot","regression","D3.js"]
+featured: true
+---
+
+
+
+<div id="r-markdown" class="section level1">
+<h1>R Markdown</h1>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>You can embed an R code chunk like this:</p>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932</code></pre>
+</div>
+<div id="including-plots" class="section level1">
+<h1>Including Plots</h1>
+<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
+<div class="figure"><span id="fig:pie"></span>
+<img src="/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
+<p class="caption">
+Figure 1: A fancy pie chart.
+</p>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<div id="did-it-work">
+
+</div>
+<div id="viz">
+
+</div>
+<pre><code>## Warning: `data_frame()` is deprecated, use `tibble()`.
+## This warning is displayed once per session.</code></pre>
+<script>
+      var data = [{"x":9.7153,"y":329.5088,"group":"group 1"},{"x":7.5853,"y":128.3074,"group":"group 2"},{"x":4.8971,"y":-30.1342,"group":"group 1"},{"x":2.3933,"y":-61.6411,"group":"group 3"},{"x":1.2756,"y":-70.8754,"group":"group 2"},{"x":9.222,"y":211.1511,"group":"group 2"},{"x":1.2515,"y":36.3234,"group":"group 2"},{"x":9.8563,"y":412.5025,"group":"group 2"},{"x":2.8572,"y":56.8236,"group":"group 2"},{"x":7.9009,"y":251.5759,"group":"group 3"},{"x":6.1059,"y":48.7255,"group":"group 2"},{"x":1.687,"y":110.1315,"group":"group 1"},{"x":0.3712,"y":106.8512,"group":"group 1"},{"x":4.8256,"y":124.7198,"group":"group 3"},{"x":9.9939,"y":554.0518,"group":"group 2"},{"x":1.6018,"y":-49.8426,"group":"group 3"},{"x":0.6824,"y":-103.1824,"group":"group 2"},{"x":3.0175,"y":-57.2881,"group":"group 3"},{"x":3.1947,"y":-76.9525,"group":"group 2"},{"x":2.9873,"y":-263.6926,"group":"group 3"},{"x":5.6055,"y":13.0623,"group":"group 3"},{"x":8.3393,"y":270.8936,"group":"group 1"},{"x":0.4257,"y":-101.4967,"group":"group 2"},{"x":5.5294,"y":159.6764,"group":"group 1"},{"x":5.1166,"y":1.5013,"group":"group 3"},{"x":0.0298,"y":-87.9917,"group":"group 2"},{"x":1.4747,"y":-22.9742,"group":"group 3"},{"x":6.6759,"y":32.2055,"group":"group 2"},{"x":3.4435,"y":-32.0064,"group":"group 2"},{"x":8.7091,"y":315.2366,"group":"group 1"},{"x":5.7962,"y":-40.463,"group":"group 1"},{"x":7.4951,"y":130.7601,"group":"group 2"},{"x":9.2838,"y":234.2125,"group":"group 3"},{"x":6.5228,"y":119.8532,"group":"group 1"},{"x":0.0448,"y":-9.2945,"group":"group 1"},{"x":7.9138,"y":-5.8306,"group":"group 3"},{"x":0.3415,"y":24.1925,"group":"group 3"},{"x":8.0362,"y":126.0853,"group":"group 2"},{"x":2.0604,"y":-82.7232,"group":"group 3"},{"x":4.1504,"y":84.0432,"group":"group 2"},{"x":6.1783,"y":114.525,"group":"group 3"},{"x":1.0035,"y":48.7312,"group":"group 1"},{"x":6.7746,"y":58.8221,"group":"group 2"},{"x":3.8551,"y":-40.2276,"group":"group 3"},{"x":4.9112,"y":118.448,"group":"group 2"},{"x":1.1274,"y":21.6929,"group":"group 3"},{"x":0.7488,"y":-102.3354,"group":"group 1"},{"x":9.0238,"y":271.8287,"group":"group 2"},{"x":1.6964,"y":42.5147,"group":"group 2"},{"x":0.046,"y":132.8526,"group":"group 2"},{"x":3.4555,"y":66.606,"group":"group 1"},{"x":3.0406,"y":-53.9788,"group":"group 2"},{"x":2.6936,"y":-11.4024,"group":"group 2"},{"x":5.7143,"y":-70.8168,"group":"group 2"},{"x":0.4218,"y":89.441,"group":"group 2"},{"x":5.7497,"y":-53.6685,"group":"group 3"},{"x":1.4899,"y":-68.9963,"group":"group 1"},{"x":2.2682,"y":34.0418,"group":"group 2"},{"x":1.271,"y":-18.6113,"group":"group 2"},{"x":8.6117,"y":156.4748,"group":"group 3"},{"x":4.7059,"y":109.8548,"group":"group 2"},{"x":0.121,"y":71.4143,"group":"group 2"},{"x":4.7973,"y":49.6208,"group":"group 1"},{"x":7.5711,"y":-23.1308,"group":"group 3"},{"x":9.7525,"y":416.4077,"group":"group 3"},{"x":7.7048,"y":214.1612,"group":"group 2"},{"x":7.8763,"y":-4.9972,"group":"group 1"},{"x":7.8702,"y":178.2261,"group":"group 1"},{"x":6.1243,"y":52.2955,"group":"group 2"},{"x":2.9844,"y":-16.5224,"group":"group 3"},{"x":2.9652,"y":130.3549,"group":"group 1"},{"x":6.7106,"y":110.7262,"group":"group 1"},{"x":8.3933,"y":174.093,"group":"group 3"},{"x":0.4816,"y":-12.9901,"group":"group 2"},{"x":2.8847,"y":128.313,"group":"group 1"},{"x":3.5726,"y":70.5323,"group":"group 2"},{"x":7.4883,"y":53.3291,"group":"group 1"},{"x":2.5883,"y":-26.9541,"group":"group 1"},{"x":9.0637,"y":225.7785,"group":"group 3"},{"x":1.8297,"y":50.3046,"group":"group 3"},{"x":3.925,"y":-53.1219,"group":"group 2"},{"x":9.2357,"y":334.0625,"group":"group 1"},{"x":2.9331,"y":-133.3909,"group":"group 2"},{"x":5.248,"y":84.2844,"group":"group 2"},{"x":0.5634,"y":143.9348,"group":"group 2"},{"x":8.8952,"y":335.7175,"group":"group 1"},{"x":0.9903,"y":47.2608,"group":"group 2"},{"x":7.0378,"y":70.1608,"group":"group 1"},{"x":4.1338,"y":55.6366,"group":"group 2"},{"x":7.2371,"y":201.4737,"group":"group 1"},{"x":8.9547,"y":210.4153,"group":"group 3"},{"x":2.8907,"y":110.0778,"group":"group 3"},{"x":2.756,"y":-14.881,"group":"group 3"},{"x":0.3101,"y":-66.5134,"group":"group 2"},{"x":7.6934,"y":192.1477,"group":"group 2"},{"x":0.524,"y":37.518,"group":"group 2"},{"x":4.6102,"y":103.2341,"group":"group 3"},{"x":7.0329,"y":272.7093,"group":"group 3"},{"x":9.7386,"y":344.7792,"group":"group 3"},{"x":0.7424,"y":-197.8962,"group":"group 2"},{"x":3.6769,"y":20.62,"group":"group 2"},{"x":4.7286,"y":35.5514,"group":"group 2"},{"x":2.1275,"y":-199.005,"group":"group 2"},{"x":6.333,"y":14.8071,"group":"group 1"},{"x":3.9751,"y":125.6248,"group":"group 3"},{"x":7.1252,"y":160.9646,"group":"group 2"},{"x":9.805,"y":402.0101,"group":"group 2"},{"x":0.9482,"y":24.448,"group":"group 3"},{"x":9.7377,"y":315.1508,"group":"group 2"},{"x":7.2831,"y":192.4188,"group":"group 1"},{"x":3.3962,"y":-21.8723,"group":"group 1"},{"x":5.0295,"y":30.6678,"group":"group 1"},{"x":8.1245,"y":155.3546,"group":"group 3"},{"x":1.9095,"y":-30.1125,"group":"group 2"},{"x":0.3865,"y":-42.0913,"group":"group 1"},{"x":8.8865,"y":209.8352,"group":"group 2"},{"x":2.8329,"y":-2.7552,"group":"group 1"},{"x":7.5203,"y":141.6783,"group":"group 3"},{"x":9.189,"y":37.7803,"group":"group 2"},{"x":2.1503,"y":25.4959,"group":"group 2"},{"x":1.8371,"y":20.5085,"group":"group 1"},{"x":7.5309,"y":17.435,"group":"group 1"},{"x":1.2545,"y":58.9569,"group":"group 3"},{"x":7.3779,"y":76.9012,"group":"group 2"},{"x":7.0808,"y":30.6472,"group":"group 1"},{"x":0.7551,"y":-34.4027,"group":"group 1"},{"x":1.0461,"y":57.2758,"group":"group 2"},{"x":6.7009,"y":7.3056,"group":"group 1"},{"x":7.566,"y":216.3432,"group":"group 1"},{"x":2.9399,"y":31.9796,"group":"group 1"},{"x":5.9359,"y":-49.5633,"group":"group 1"},{"x":8.035,"y":85.3976,"group":"group 3"},{"x":2.9386,"y":-83.4952,"group":"group 3"},{"x":8.3321,"y":173.0142,"group":"group 2"},{"x":7.143,"y":50.4455,"group":"group 1"},{"x":1.4568,"y":78.2803,"group":"group 3"},{"x":2.5438,"y":21.3386,"group":"group 3"},{"x":8.5236,"y":299.0164,"group":"group 3"},{"x":4.7099,"y":7.01,"group":"group 1"},{"x":3.9388,"y":28.723,"group":"group 2"},{"x":9.2465,"y":214.7514,"group":"group 3"},{"x":8.1593,"y":122.1314,"group":"group 1"},{"x":0.4442,"y":43.7783,"group":"group 3"},{"x":5.2011,"y":-10.2248,"group":"group 3"},{"x":7.8722,"y":44.2943,"group":"group 1"},{"x":7.9643,"y":253.8772,"group":"group 2"},{"x":7.3972,"y":-14.3507,"group":"group 1"},{"x":5.6048,"y":133.6448,"group":"group 3"},{"x":0.2955,"y":-63.6078,"group":"group 2"},{"x":3.8387,"y":-60.9736,"group":"group 1"},{"x":8.029,"y":112.572,"group":"group 3"},{"x":2.8325,"y":60.2181,"group":"group 1"},{"x":9.0133,"y":295.4048,"group":"group 3"},{"x":5.8101,"y":147.7081,"group":"group 3"},{"x":6.5985,"y":-3.8201,"group":"group 1"},{"x":6.47,"y":169.5951,"group":"group 3"},{"x":8.263,"y":122.5053,"group":"group 3"},{"x":9.7593,"y":518.9563,"group":"group 1"},{"x":5.1635,"y":-12.1048,"group":"group 2"},{"x":5.2404,"y":74.7635,"group":"group 1"},{"x":0.746,"y":-79.7705,"group":"group 2"},{"x":3.4138,"y":53.2863,"group":"group 1"},{"x":3.6513,"y":45.3927,"group":"group 3"},{"x":4.0547,"y":43.558,"group":"group 3"},{"x":8.2635,"y":85.1811,"group":"group 1"},{"x":3.4459,"y":-27.19,"group":"group 2"},{"x":3.4893,"y":-149.02,"group":"group 3"},{"x":8.3822,"y":236.172,"group":"group 1"},{"x":8.4095,"y":202.154,"group":"group 2"},{"x":0.7374,"y":-128.1264,"group":"group 1"},{"x":5.9615,"y":-35.9102,"group":"group 2"},{"x":1.2512,"y":132.6848,"group":"group 1"},{"x":6.4034,"y":56.1204,"group":"group 2"},{"x":2.0544,"y":27.6512,"group":"group 3"},{"x":2.4986,"y":106.8712,"group":"group 3"},{"x":9.8369,"y":341.3874,"group":"group 3"},{"x":6.9608,"y":203.9357,"group":"group 3"},{"x":5.6138,"y":147.5638,"group":"group 3"},{"x":0.9488,"y":-136.7499,"group":"group 3"},{"x":5.3545,"y":128.2205,"group":"group 2"},{"x":7.9455,"y":201.04,"group":"group 1"},{"x":4.905,"y":-67.5129,"group":"group 2"},{"x":4.6469,"y":-54.7188,"group":"group 2"},{"x":5.4544,"y":18.342,"group":"group 2"},{"x":8.2799,"y":245.028,"group":"group 3"},{"x":2.486,"y":-106.2582,"group":"group 2"},{"x":5.9459,"y":-28.373,"group":"group 3"},{"x":8.5479,"y":200.6915,"group":"group 3"},{"x":4.4998,"y":166.9931,"group":"group 2"},{"x":0.498,"y":-68.9453,"group":"group 2"},{"x":6.8421,"y":152.6954,"group":"group 3"},{"x":2.2395,"y":26.4916,"group":"group 3"},{"x":5.8914,"y":46.6893,"group":"group 3"},{"x":3.4972,"y":-30.4891,"group":"group 1"},{"x":5.4394,"y":72.6275,"group":"group 3"},{"x":7.342,"y":180.8301,"group":"group 2"},{"x":2.3905,"y":61.3918,"group":"group 3"},{"x":6.1419,"y":-12.0005,"group":"group 3"},{"x":4.9614,"y":-61.0202,"group":"group 3"},{"x":3.8011,"y":6.5227,"group":"group 2"},{"x":5.9979,"y":-40.3695,"group":"group 1"},{"x":8.85,"y":347.0208,"group":"group 1"},{"x":6.0572,"y":90.5885,"group":"group 1"},{"x":0.463,"y":4.5749,"group":"group 3"},{"x":6.9194,"y":138.3685,"group":"group 1"},{"x":3.901,"y":7.6427,"group":"group 3"},{"x":6.8924,"y":-15.9424,"group":"group 1"},{"x":3.1839,"y":-119.0364,"group":"group 2"},{"x":2.3524,"y":-64.1699,"group":"group 2"},{"x":3.5824,"y":10.5611,"group":"group 1"},{"x":1.1386,"y":65.085,"group":"group 2"},{"x":9.8574,"y":298.9274,"group":"group 3"},{"x":6.344,"y":149.5991,"group":"group 3"},{"x":5.7771,"y":-26.3704,"group":"group 3"},{"x":6.7101,"y":167.7091,"group":"group 2"},{"x":3.4798,"y":36.5662,"group":"group 3"},{"x":1.975,"y":-143.5933,"group":"group 2"},{"x":8.3467,"y":226.8623,"group":"group 2"},{"x":5.0442,"y":45.5586,"group":"group 2"},{"x":8.9411,"y":162.8632,"group":"group 1"},{"x":2.7722,"y":70.3801,"group":"group 2"},{"x":7.1433,"y":132.5426,"group":"group 2"},{"x":0.0434,"y":15.8037,"group":"group 3"},{"x":9.3339,"y":149.3095,"group":"group 1"},{"x":4.0786,"y":196.1681,"group":"group 1"},{"x":0.1716,"y":2.4468,"group":"group 2"},{"x":6.6335,"y":162.0829,"group":"group 1"},{"x":1.9941,"y":168.8719,"group":"group 1"},{"x":1.4091,"y":25.9484,"group":"group 3"},{"x":7.4476,"y":48.3116,"group":"group 2"},{"x":7.1929,"y":120.3986,"group":"group 1"},{"x":7.0705,"y":165.2355,"group":"group 2"},{"x":2.6973,"y":73.0315,"group":"group 3"},{"x":4.2383,"y":54.4056,"group":"group 3"},{"x":8.7926,"y":57.5298,"group":"group 2"},{"x":7.0414,"y":250.7879,"group":"group 2"},{"x":2.7178,"y":-17.8058,"group":"group 3"},{"x":0.587,"y":79.0733,"group":"group 1"},{"x":0.8322,"y":-36.367,"group":"group 3"},{"x":0.7598,"y":-2.0252,"group":"group 2"},{"x":0.5292,"y":76.8197,"group":"group 3"},{"x":8.1946,"y":202.7198,"group":"group 1"},{"x":0.8651,"y":-88.1543,"group":"group 3"},{"x":7.3289,"y":86.5402,"group":"group 1"},{"x":0.4378,"y":-18.6311,"group":"group 1"},{"x":5.0007,"y":37.5044,"group":"group 3"},{"x":8.454,"y":251.4579,"group":"group 1"},{"x":1.1623,"y":57.5528,"group":"group 1"},{"x":1.4946,"y":68.1871,"group":"group 1"},{"x":3.4223,"y":90.3837,"group":"group 1"},{"x":6.5045,"y":-19.3593,"group":"group 3"},{"x":3.6522,"y":5.049,"group":"group 1"},{"x":6.1495,"y":136.3296,"group":"group 2"},{"x":4.8983,"y":-213.8186,"group":"group 1"},{"x":8.4423,"y":119,"group":"group 2"},{"x":4.641,"y":-120.3641,"group":"group 3"},{"x":0.633,"y":113.9302,"group":"group 1"},{"x":6.6405,"y":221.1317,"group":"group 3"},{"x":2.2004,"y":23.0126,"group":"group 3"},{"x":5.3575,"y":127.7842,"group":"group 2"},{"x":6.6556,"y":197.5555,"group":"group 2"},{"x":9.1288,"y":393.2593,"group":"group 2"},{"x":8.8461,"y":187.0709,"group":"group 3"},{"x":7.962,"y":71.0148,"group":"group 2"},{"x":9.4811,"y":332.0061,"group":"group 2"},{"x":1.3594,"y":-19.1287,"group":"group 3"},{"x":2.9903,"y":-56.5818,"group":"group 2"},{"x":4.5737,"y":81.1725,"group":"group 1"},{"x":5.7089,"y":87.114,"group":"group 1"},{"x":5.8759,"y":56.6274,"group":"group 2"},{"x":4.1664,"y":-50.3929,"group":"group 1"},{"x":6.8252,"y":22.5973,"group":"group 1"},{"x":4.1994,"y":126.725,"group":"group 3"},{"x":8.421,"y":158.0264,"group":"group 3"},{"x":6.0866,"y":64.6032,"group":"group 2"},{"x":2.2426,"y":46.7552,"group":"group 3"},{"x":9.3006,"y":265.6382,"group":"group 1"},{"x":0.8661,"y":-96.2923,"group":"group 3"},{"x":9.4619,"y":225.3461,"group":"group 2"},{"x":8.1858,"y":213.8503,"group":"group 2"},{"x":7.9116,"y":176.7121,"group":"group 2"},{"x":6.3053,"y":115.194,"group":"group 3"},{"x":9.3275,"y":205.8496,"group":"group 1"},{"x":4.8069,"y":49.5274,"group":"group 3"},{"x":4.2457,"y":108.4402,"group":"group 3"},{"x":4.7559,"y":81.9932,"group":"group 3"},{"x":1.9996,"y":-102.8764,"group":"group 1"},{"x":5.232,"y":112.51,"group":"group 3"},{"x":0.7876,"y":-11.9031,"group":"group 2"},{"x":0.8556,"y":-58.7086,"group":"group 3"},{"x":9.4464,"y":437.8783,"group":"group 2"},{"x":7.5425,"y":106.1514,"group":"group 1"},{"x":0.6824,"y":61.7245,"group":"group 1"},{"x":3.6423,"y":-65.0276,"group":"group 2"},{"x":6.5163,"y":191.3639,"group":"group 2"},{"x":1.9693,"y":80.4994,"group":"group 3"},{"x":7.2336,"y":114.6917,"group":"group 2"},{"x":1.4786,"y":62.7044,"group":"group 3"},{"x":8.378,"y":161.1839,"group":"group 1"},{"x":7.8346,"y":273.614,"group":"group 1"}];
+    </script>
+<script type="text/javascript">
+var point_vals = d3.select("#viz").append("p").text("Mouseover some data!");
+
+//Get how wide our page is in pixels so we can draw our plot in it
+var page_width = $("#did-it-work").width();
+  
+// set the dimensions and margins of the graph
+var margin = 20,
+    width = page_width - 2*margin,
+    height = page_width*0.8 - 2*margin;
+    
+// Find max data values
+var x_extent = d3.extent(data, d => d.x);
+var y_extent = d3.extent(data, d => d.y);
+
+// Set the scales 
+var x = d3.scaleLinear()
+  .domain(x_extent)
+  .range([0, width]);
+  
+var y = d3.scaleLinear()
+  .domain(y_extent)
+  .range([height, 0]);
+
+//Set up our SVG element
+var svg = d3.select("#viz").append("svg")
+    .attr("width", width + 2*margin)
+    .attr("height", height + 2*margin)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin + "," + margin + ")");
+
+var bounce_select = d3.transition()
+    .duration(1000)
+    .ease(d3.easeElastic.period(0.4));
+    
+// Add the scatterplot
+svg.selectAll(".dots")
+    .data(data)
+  .enter().append("circle")
+    .attr("class", "dots")
+    .attr("fill", d => d.group === "group 1"? "steelblue":"orangered")
+    .attr("fill-opacity", 0.3)
+    .attr("r", 5)
+    .attr("cx", d => x(d.x) )
+    .attr("cy", d => y(d.y) )
+    .on("mouseover", function(d){
+       d3.selectAll(".dots").attr("r", 5) //make sure all the dots are small
+       d3.select(this)
+        .transition(bounce_select)
+        .attr("r", 10);
+      
+       point_vals.text("X:" + d.x + " Y:" + d.y) //change the title of the graph to the datapoint
+    });
+    
+// Draw the axes    
+// Add the X Axis
+svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+// Add the Y Axis
+svg.append("g")
+    .call(d3.axisLeft(y));
+</script>
+</div>
