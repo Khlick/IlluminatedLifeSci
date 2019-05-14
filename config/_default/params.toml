@@ -65,7 +65,7 @@ appointment_url = ""
 contact_links = [
   {icon = "twitter", icon_pack = "fab", name = "@KhrisGriffis", link = "https://twitter.com/KhrisGriffis"},
   {icon = "instagram", icon_pack = "fab", name = "@KhrisGriffis", link = "https://www.instagram.com/khrisgriffis/"},
-  #{icon = "skype", icon_pack = "fab", name = "Skype Me", link = "skype:echo123?call"},
+  {icon = "camera-retro", icon_pack = "fas", name = "Photography Portfolio", link = "https://www.khlick.com/"},
   #{icon = "keybase", icon_pack = "fab", name = "Chat on Keybase", link = "https://keybase.io/"},
   #{icon = "comments", icon_pack = "fas", name = "Discuss on Forum", link = "https://discourse.gohugo.io"},
   # {icon = "telegram", icon_pack = "fab", name = "Telegram Me", link = "https://telegram.me/@Telegram"},
